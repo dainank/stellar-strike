@@ -12,14 +12,15 @@ Topics explored throughout development of this project include:
 - tracking player score
 - sound effects and music
 
-Documentation and notes can be found under the `~/docs` directory.  [1 - Context](./docs/1_Context.md) is a good place to start.
+Documentation and notes can be found under the `~/docs` directory.  [`1 - Context`](./docs/1_Context.md) is a good place to start. Docs might get migrated to a dedicated static site at a later stage for ease of reading.
 
 # Setup
-> See [2 - Setup Documentation](./docs/2_Setup.md)
+> See [`2 - Setup Documentation`](./docs/2_Setup.md)
 
 # Resources
 > Useful links; please notify me if any are broken!
 
+## Links
 - [NES Development Community](https://www.nesdev.org/)
 - [Reference Book](https://www.manning.com/books/classic-game-programming-on-the-nes)
     - [Book's Source Code](https://github.com/tony-cruise/ProgrammingGamesForTheNES)
@@ -28,5 +29,11 @@ Documentation and notes can be found under the `~/docs` directory.  [1 - Context
 - [EverDrive N8 Cartridges](https://krikzz.com/our-products/legacy/edn8-72pin.html)
 - [Software Emulators](./docs/2_Setup.md#emulation)
     - [Mesen](https://www.mesen.ca/docs/index.html)
-    - [FCEUX]
+    - [FCEUX](https://fceux.com/web/download.html)
 - [Assembler `cc65`](https://cc65.github.io/)
+- [NES Tileset Editor](https://www.electricadventures.net/Pages/Category/34)
+- [NES Sound Creation](https://famitracker.org/)
+
+## Books
+- *Programming the 6502* by *Rodney Zaks* (`ISBN 0895881357`)
+- *Programming the 65816: Including the 6502, 65C02, and 65802* by _David Eyes_ and _Ron Lichty_ (`ISBN 0893037893`)
