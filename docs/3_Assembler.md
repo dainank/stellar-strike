@@ -49,8 +49,8 @@ Limited registers in our CPU mean that we need to devote a lot of code to transf
 Memory from `$0100` to `$01FF` is dedicated to the stack. The stack can be used to store values.
 
 # Data
-- memory -> register (loading data)
-- register -> memory (storing data)
+- memory -> register (loading data) [LD]
+- register -> memory (storing data) [ST]
 
 ## Loading
 ```asm
@@ -141,3 +141,14 @@ lda ($02,X)
 ```
 
 ## Storing
+`ST<source register> <destination>`
+
+It follows the same pattern as [loading](#loading):
+```asm
+lda #$10
+sta $06
+ldx #$11
+stx $07
+ldy #$12
+sty $08
+```
