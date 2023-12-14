@@ -100,7 +100,7 @@ SKIPCODE:       ; jumped to
 
 When `jsr` is called, address of next instruction pushed onto *stack*. Program counter adjusted to execute at start of this address until `RTS`/`RTI` is reached. Make sure that all items pushed onto stack after `jsr` are pushed back off once returning/breaking out. Example follows below:
 
-```
+```asm
 lda #5
 jsr FUNCTION
 jsr FUNCTION
@@ -110,6 +110,20 @@ FUNCTION:
     adc #5  ; add 5 to A
     rts     ; return from subroutine
 ```
+
+# Labels
+> Assembler works out the address of jumps for you.
+
+```asm
+jmp NEWCODE
+ 
+NEWCODE:
+    ...
+```
+
+See [the labels source code examples](./examples/labels.s) for greater clarity.
+
+
 
 # Additional Resources
 
