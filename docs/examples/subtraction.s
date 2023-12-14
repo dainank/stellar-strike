@@ -7,7 +7,7 @@
 
 sec         ; set the carry flag
 lda #$06    ; load A with $06
-SBC #$05    ; subtract $05 from 'A' = $01
+sbc #$05    ; subtract $05 from 'A' = $01
 
 ;***************************************************************************
 ; Subtract Direct Address
@@ -17,7 +17,7 @@ lda #$02    ; load A with $02
 sta $0300   ; store $0300 with $02
 sec
 lda #$08    ; load A with $08
-SBC $0300   ; subtract $02 from 'A' = $06
+sbc $0300   ; subtract $02 from 'A' = $06
 
 ;***************************************************************************
 ; Subtract Zero-Page Address Indexed With X or Y
@@ -28,7 +28,7 @@ sta $08     ; store $08 with $02
 ldx #$02    ; load X with $02
 sec
 lda #$10    ; load A with $10
-SBC $06,x   ; $10 - $02 = $0e
+sbc $06,x   ; $10 - $02 = $0e
 
 ; OR
 
@@ -37,7 +37,7 @@ sta $0302   ; store $0302 with $04
 ldx #$02    ; load X with $02
 sec
 lda #$16    ; load A with $16
-SBC $0300,x ; $0300 + $02 (X) = $0302 = $04 -> $16 - $04 = $12
+sbc $0300,x ; $0300 + $02 (X) = $0302 = $04 -> $16 - $04 = $12
 
 ;***************************************************************************
 ; Subtract Zero-Page Indirect Address Indexed by Y or X

@@ -12,7 +12,7 @@ Topics explored throughout development of this project include:
 - tracking player score
 - sound effects and music
 
-Documentation and notes can be found under the `~/docs` directory.  [`1 - Context`](./docs/1_Context.md) is a good place to start. Docs might get migrated to a dedicated static site at a later stage for ease of reading.
+Documentation and notes can be found under the `~/docs` directory.  **[`1 - Context`](./docs/1_Context.md) is a good place to start.** Docs might get migrated to a dedicated static site at a later stage for ease of reading.
 
 # Setup
 > See [`2 - Setup Documentation`](./docs/2_Setup.md)

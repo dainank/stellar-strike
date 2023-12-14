@@ -25,6 +25,23 @@ sbc <source>
 
 See [the subtraction source code examples](./examples/subtraction.s) for greater clarity.
 
+# Incrementing & Decrementing
+
+See [the incrementation source code examples](./examples/incrementation.s) for greater clarity. You can also directly increment/decrement registers:
+- `inx`
+- `iny`
+- `dex`
+- `dey`
+
+Furthermore, you can decrement addresses too:
+```asm
+dec $05     ; zero-page address
+dec $0300
+
+ldx #$02
+dec $05,X
+```
+
 # Additional Resources
 
 - [Further Understanding Of 'Zero-Page Indirect Address Indexed by Y' Actions](https://stackoverflow.com/questions/77661945/struggling-to-understand-zero-page-indirect-address-indexed-by-y-for-the-6502?noredirect=1#comment136915304_77661945)
