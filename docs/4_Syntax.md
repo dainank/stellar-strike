@@ -123,7 +123,83 @@ NEWCODE:
 
 See [the labels source code examples](./examples/labels.s) for greater clarity.
 
+# Bytes, Bits and Nibbles
 
+- Pixels are represented by one or more **bits** (1|0) stored in system memory.
+- **Bytes** (8-bits) can represent: `[ 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 ]` = 0-255
+    - which pixels are on/off in a tile pattern
+    - (x, y) coordinate of sprites
+    - contain flags in the bits
+- **Nibbles** are two-halves of a byte (2 nibbles) representing:
+    - 0-3
+    - 4-7
+        -> which can contain 0-15 OR 0-F (hex)
+
+## Bit Tests
+
+```asm
+lda #%00000001  ; load with binary value `00000001`
+bit $05         ; check bits at byte $05
+```
+
+Zero flag raised if bit `0` in byte `$05` is true (1) as is the case in `A`.
+
+# Logic Operators
+> Directly manipulate bits in register A or memory location.
+
+## AND
+1. Compare all bits from A to memory/value.
+2. Simple `&&`
+
+## XOR
+1. Compare all bits from A to memory/value.
+2. Simple `||` not counting positive 1-1
+
+## ORA
+> OR
+
+1. Compare all bits from A to memory/value.
+2. Simple `||`
+
+# Shift Operations
+> Fast x2 Multiplication/Division
+
+## ASL
+> Arithmetic Shift Left
+
+Shift all bits to the left (and 7th bit to carry flag). 0 always placed in 0th bit.
+
+## LSR
+> Logical Shift Right
+Shift all bits to the right (and 0th bit to carry flag). 0 always placed in 7th bit.
+
+## ROL
+> Rotate Left
+
+Same as ASL, but carry flag is placed in 0th bit.
+
+## ROR
+> Rotate Right
+
+Same as LSR, but carry flag is placed in 7th bit.
+
+# Utilizing Stack
+
+- `pha` - Push A into stack.
+- `php` - Push P into stack.
+- `pla` - Pop top item into A.
+- `plp` - Pop top item into P.
+
+For example:
+
+```asm
+lda #20 ; load 20 into A
+pha     ; push 20 on stack
+lda #10 ; load 10 into A
+adc $80 ; add 80 to A
+sta $81 : store 80+10 at $81: 90
+pla     : top on stack is 20, which is popped now into A
+```
 
 # Additional Resources
 
