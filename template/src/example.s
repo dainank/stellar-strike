@@ -1,3 +1,7 @@
+;*****************************************************************
+; See '5_Demo.md' under ~/docs for further explanation.
+;*****************************************************************
+
 ; Define PPU Registers
 PPU_CONTROL = $2000         ; write
 PPU_MASK = $2001            ; write
@@ -53,3 +57,10 @@ nmi_ready:        .res 1
 gamepad:        .res 1
 d_x:            .res 1
 d_y:            .res 1
+
+;*****************************************************************
+; Sprite OAM Data area - copied to VRAM in NMI routine
+;*****************************************************************
+ 
+.segment "OAM"
+oam: .res 256

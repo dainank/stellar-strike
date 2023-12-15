@@ -101,3 +101,13 @@ ZEROPAGE is RAM, thus we can only **set aside** bytes assigned to a label throug
 - `gamepad` - stores input from game controller
 - `d_x` - x velocity of 'ball'
 - `d_y` - y velocity of 'ball'
+
+# Sprite Data (OAM)
+> Sprite Object Attribute Memory (OAM) Table
+
+- X/Y coordinates
+- attributes of 64 8x8 sprites
+    - color
+    - pattern
+
+These values can be changed whenever, however the NMI ROutine takes care of copying them to PPU and then seeing visual changes.
