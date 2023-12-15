@@ -20,7 +20,7 @@ Documentation and notes can be found under the `~/docs` directory.  **[`1 - Cont
 # Resources
 > Useful links; please notify me if any are broken!
 
-[**`src` Code Syntax**](./docs/Syntax.md) for *MOS Technology 6502 - 8-bit microprocessor*
+[**`src` Code Syntax**](./docs/4_Syntax.md) for *MOS Technology 6502 - 8-bit microprocessor*
 
 ## Links
 - [NES Development Community](https://www.nesdev.org/)
