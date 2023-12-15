@@ -80,3 +80,14 @@ Usually, only the first three lines are altered:
 - `INES_MAPPER` - Mapper Type (see further docs)
 - `INES_MIRROR` - Horizontally (0) & Vertically (1) mirrored name tables
 - `INES_SRAM` - Set to (1) if contains battery backed RAM at $6000-$7fff.
+
+# NES Vectors
+> Must always be included.
+
+Defines where the three key interrupts or starting point vectors are. The interrupt stops the CPU from doing whatever it is working on as it receives an external signal instructing it to do so.
+
+- `NMI` - **Non-Maskable Interrupt Handler**: Called when screen is drawn and raster is moving to top of screen.
+- `IRQ` - Indicating clock-tick has occurred but incompatible with NES, however can be used with the `BRK` instruction, thus can be used as single subroutine, called with single byte instruction.
+- `RESET` - Starting point of title (reset point).
+
+Considering our config file, this segment of code is placed in the ROM at addresses `$FFFA` to `$FFFF`.

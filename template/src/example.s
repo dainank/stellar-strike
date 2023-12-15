@@ -38,3 +38,8 @@ INES_SRAM   = 0     ; no battery-backed SRAM
 .byte INES_MIRROR | (INES_SRAM << 1) | ((INES_MAPPER & $f) << 4)
 .byte (INES_MAPPER & %11110000)
 .byte $0, $0, $0, $0, $0, $0, $0, $0    ; padding?
+
+.segment "VECTORS"
+.word nmi
+.word reset
+.word irq
