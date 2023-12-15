@@ -123,3 +123,8 @@ These values can be changed whenever, however the NMI ROutine takes care of copy
     - each consist of two sets of 256 patterns
 
 Use `.incbin` to import the appropriate binary file containing the graphics.
+
+# Ram (BSS)
+> Segments marked "BSS" placed inside remaining RAM after memory has been set aside for zero-page and oam (sprite) areas.
+
+- two bytes required for BSS addresses, thus performance is lost. As previously stated, RAM area
