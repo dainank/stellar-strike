@@ -43,3 +43,13 @@ INES_SRAM   = 0     ; no battery-backed SRAM
 .word nmi
 .word reset
 .word irq
+
+;*****************************************************************
+; 6502 Zero Page Memory (256 bytes)
+;*****************************************************************
+ 
+.segment "ZEROPAGE"
+nmi_ready:        .res 1
+gamepad:        .res 1
+d_x:            .res 1
+d_y:            .res 1

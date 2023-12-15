@@ -71,9 +71,9 @@ NES system values that provide access to the PPU (graphics), APU (audio) and pla
 > Must always be included.
 
 - which mapper is used
-    - banks of ROM available
-    - banks of CHR available
-    - direction name tables are mirrored
+- banks of ROM available
+- banks of CHR available
+- direction name tables are mirrored
 - presence of *battery-backed static RAM* (allows saving)
 
 Usually, only the first three lines are altered:
@@ -91,3 +91,13 @@ Defines where the three key interrupts or starting point vectors are. The interr
 - `RESET` - Starting point of title (reset point).
 
 Considering our config file, this segment of code is placed in the ROM at addresses `$FFFA` to `$FFFF`.
+
+# Zero-Page
+> All segments marked as "ZEROPAGE" are placed in first 256 bytes.
+
+ZEROPAGE is RAM, thus we can only **set aside** bytes assigned to a label through the `.res` statement.
+
+- `nmi-ready` - flag allowing display to be rendered (changes to video memory)
+- `gamepad` - stores input from game controller
+- `d_x` - x velocity of 'ball'
+- `d_y` - y velocity of 'ball'
