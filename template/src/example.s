@@ -64,3 +64,29 @@ d_y:            .res 1
  
 .segment "OAM"
 oam: .res 256
+
+;*****************************************************************
+; Default palette table has 16 entries for tiles
+;                       and 16 entries for sprites
+;*****************************************************************
+ 
+.segment "RODATA"
+default_palette:
+.byte $0F,$15,$26,$37   ; [bg-0] purple/pink
+.byte $0F,$09,$19,$29   ; [bg-1] green
+.byte $0F,$01,$11,$21   ; [bg-2] blue
+.byte $0F,$00,$10,$30   ; [bg-3] greyscale
+.byte $0F,$18,$28,$38   ; [sprite-0] yellow
+.byte $0F,$14,$24,$34   ; [sprite-1] purple
+.byte $0F,$1B,$2B,$3B   ; [sprite-2] teal
+.byte $0F,$12,$22,$32   ; [sprite-3] marine
+ 
+welcome_txt:
+.byte 'W','E','L','C', 'O', 'M', 'E', 0
+
+;*****************************************************************
+; Import both the background and sprite character sets
+;*****************************************************************
+ 
+.segment "TILES"
+.incbin "example.chr"

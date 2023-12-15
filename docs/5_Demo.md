@@ -111,3 +111,15 @@ ZEROPAGE is RAM, thus we can only **set aside** bytes assigned to a label throug
     - pattern
 
 These values can be changed whenever, however the NMI ROutine takes care of copying them to PPU and then seeing visual changes.
+
+# `src` Code
+> All sectiosn marked "CODE" are placed in ROM, post sections labelled "RODATA"
+
+# Chars (TILES)
+> Placed in ROM
+
+- marked as tile patterns used for backgrounds and sprites
+- set of tile patterns is 8k long
+    - each consist of two sets of 256 patterns
+
+Use `.incbin` to import the appropriate binary file containing the graphics.
