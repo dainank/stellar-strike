@@ -61,3 +61,10 @@ SEGMENTS {
 - `ro` - Read Only
 - `zp` - Zero-Page
 - `start` - specifies start location of segment
+
+# NES Defined Values
+> Repeated system values can be defined once and allocated a label.
+
+NES system values that provide access to the PPU (graphics), APU (audio) and player controllers.
+
+# NES Header
