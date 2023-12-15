@@ -26,3 +26,15 @@ PAD_U      = $10
 PAD_D      = $20
 PAD_L      = $40
 PAD_R      = $80
+
+.segment "HEADER"
+INES_MAPPER = 0     ; NROM
+INES_MIRROR = 0     ; horizontal mirror
+INES_SRAM   = 0     ; no battery-backed SRAM
+ 
+.byte 'N', 'E', 'S', $1A ; ID 
+.byte $02           ; 16k PRG bank count    (2 x 16k bank counts)
+.byte $01           ; 8k CHR bank count     (1 x 8k ROM banks)
+.byte INES_MIRROR | (INES_SRAM << 1) | ((INES_MAPPER & $f) << 4)
+.byte (INES_MAPPER & %11110000)
+.byte $0, $0, $0, $0, $0, $0, $0, $0    ; padding?

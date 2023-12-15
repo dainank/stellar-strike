@@ -68,3 +68,15 @@ SEGMENTS {
 NES system values that provide access to the PPU (graphics), APU (audio) and player controllers.
 
 # NES Header
+> Must always be included.
+
+- which mapper is used
+    - banks of ROM available
+    - banks of CHR available
+    - direction name tables are mirrored
+- presence of *battery-backed static RAM* (allows saving)
+
+Usually, only the first three lines are altered:
+- `INES_MAPPER` - Mapper Type (see further docs)
+- `INES_MIRROR` - Horizontally (0) & Vertically (1) mirrored name tables
+- `INES_SRAM` - Set to (1) if contains battery backed RAM at $6000-$7fff.
